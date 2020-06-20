@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title%}
+View Employee
+{% endblock %}
+{% block content %}
+<div class="alert alert-dark text-center m-5" role="alert">
+    <h1 class="text-center"><u>Employee Information</u></h1>
+ <img src="{{emp.pic.url}}" width="300px" class="m-3">
+<h4><b>Name:</b> {{emp.name}}</h4>
+<h4><b>Joining Date:</b> {{emp.datetime}}</h4>
+<h4><b>Email:</b> {{emp.email}}</h4>
+<h4><b>Mobile:</b> {{emp.mobile}}</h4>
+<h4><b>Salary:</b> {{emp.salary}}</h4>
+</div>
+{% endblock %}

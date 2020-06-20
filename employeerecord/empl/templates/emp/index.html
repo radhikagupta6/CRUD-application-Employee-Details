@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title%}
+Employee Dashboard
+{% endblock %}
+{% block content %}
+<div class="container ">
+  <h2 class="text-center">Employees Dashboard</h2>
+  <p class="text-center"></p>
+    <a href="{% url 'addEmp' %}" class="btn btn-info my-4">Add Employee</a>
+  <table class="table table-dark table-hover table-bordered text-center">
+    <thead>
+      <tr class="bg-primary text-white ">
+         <th>No.</th>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    {% if emps %}
+    {% for e in emps %}
+      <tr>
+        <td>{{ forloop.counter}}</td>
+        <td><img src="{{e.pic.url}}" width="80px" height="70px" class="rounded"></td>
+        <td><a href="{% url 'oneEmp' e.id %}">{{e.name}}</a></td>
+          <td>{{e.salary}}</td>
+        <td><a href="{% url 'editEmp' e.id %}" class="btn btn-outline-warning">Edit</a>
+        <a href="{% url 'deleteEmp' e.id %}" class="btn btn-outline-warning">Delete</a></td>
+      </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+        <td colspan="4"><span>
+             No Record Found !
+            </span>
+        </td>
+    </tr>
+
+    {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
