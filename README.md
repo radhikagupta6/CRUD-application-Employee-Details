@@ -21,7 +21,7 @@ This is a simple CRUD application for employees based on Django framework.
 <table>
  
 
-How does it work ?
+#### How does it work ?
 - Clone the repository. 
 - Set the interpreter. 
 - In the terminal : cd employeerecord
