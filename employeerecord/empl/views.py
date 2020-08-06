@@ -63,3 +63,8 @@ def delete_employee(request, id=None):
         'emp': emp
     }
     return render(request, 'emp/delete.html', context)
+
+
+def home_view(request):
+    context = dict()
+    return render(request, 'emp/home.html', context)
